@@ -4,5 +4,6 @@ const { app, BrowserWindow } = electorn; // Access electorn overall running proc
 
 // Wait for ready
 app.on('ready', () => {
-    new BrowserWindow({});
+    const mainWindow = new BrowserWindow({});
+    mainWindow.loadFile("index.html") // Load html file
 });
