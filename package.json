@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^13.1.5"
+    "electron": "^13.1.5",
+    "fluent-ffmpeg": "^2.1.2"
   }
 }

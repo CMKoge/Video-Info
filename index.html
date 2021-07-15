@@ -1,5 +1,24 @@
 <head>
 </head>
 <body>
-    <h3>Video Info</h3>    
+    <h3>Video Info</h3>  
+    <form>
+        <div>
+            <label for="">Select a video</label>
+            <br>
+            <input type="file" accept="video/*">
+        </div>
+        <button type="submit">Get Info</button>
+    </form>  
+    <script>
+        const electorn = require('electron');
+        const { ipcRenderer } = electorn; // Pull inter process communication from electron
+
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const { path } = document.querySelector('input').files['0']; // Pull only path
+
+            ipcRenderer.send('videoSubmit', path); // Send data to electron app
+        });
+    </script>
 </body>
